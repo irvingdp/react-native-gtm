@@ -1,6 +1,6 @@
 {
   "name": "react-native-gtm",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React Native bridge for using native Google tag manager libraries on iOS and Android",
   "main": "./index.js",
   "author": {
@@ -17,9 +17,5 @@
     "react-native",
     "ios",
     "android"
-  ],
-  "devDependencies": {
-    "react": "15.2.0",
-    "react-native": "^0.28.0"
-  }
+  ]
 }
