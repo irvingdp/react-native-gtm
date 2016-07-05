@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EE5431A1D2B58AC003A909C /* react_native_gtm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EE543191D2B58AC003A909C /* react_native_gtm.h */; };
+		1EE5431C1D2B58AC003A909C /* react_native_gtm.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5431B1D2B58AC003A909C /* react_native_gtm.m */; };
+		1EE543E51D2B632F003A909C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE543DE1D2B632F003A909C /* libGoogleAnalyticsServices.a */; };
+		1EE5446E1D2B6902003A909C /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE5446D1D2B6902003A909C /* libAdIdAccess.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1EE543141D2B58AC003A909C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				1EE5431A1D2B58AC003A909C /* react_native_gtm.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1EE543161D2B58AC003A909C /* libreact-native-gtm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-gtm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EE543191D2B58AC003A909C /* react_native_gtm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = react_native_gtm.h; sourceTree = "<group>"; };
+		1EE5431B1D2B58AC003A909C /* react_native_gtm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = react_native_gtm.m; sourceTree = "<group>"; };
+		1EE543D31D2B632F003A909C /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		1EE543D41D2B632F003A909C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		1EE543D51D2B632F003A909C /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		1EE543D61D2B632F003A909C /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		1EE543D71D2B632F003A909C /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		1EE543D81D2B632F003A909C /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		1EE543D91D2B632F003A909C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		1EE543DA1D2B632F003A909C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		1EE543DB1D2B632F003A909C /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		1EE543DC1D2B632F003A909C /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		1EE543DE1D2B632F003A909C /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		1EE543DF1D2B632F003A909C /* TAGContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGContainer.h; sourceTree = "<group>"; };
+		1EE543E01D2B632F003A909C /* TAGContainerOpener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGContainerOpener.h; sourceTree = "<group>"; };
+		1EE543E11D2B632F003A909C /* TAGDataLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGDataLayer.h; sourceTree = "<group>"; };
+		1EE543E21D2B632F003A909C /* TAGLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGLogger.h; sourceTree = "<group>"; };
+		1EE543E31D2B632F003A909C /* TAGManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGManager.h; sourceTree = "<group>"; };
+		1EE5446D1D2B6902003A909C /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EE543131D2B58AC003A909C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE543E51D2B632F003A909C /* libGoogleAnalyticsServices.a in Frameworks */,
+				1EE5446E1D2B6902003A909C /* libAdIdAccess.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EE5430D1D2B58AC003A909C = {
+			isa = PBXGroup;
+			children = (
+				1EE543D21D2B632F003A909C /* lib */,
+				1EE543181D2B58AC003A909C /* react-native-gtm */,
+				1EE543171D2B58AC003A909C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1EE543171D2B58AC003A909C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EE543161D2B58AC003A909C /* libreact-native-gtm.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1EE543181D2B58AC003A909C /* react-native-gtm */ = {
+			isa = PBXGroup;
+			children = (
+				1EE543191D2B58AC003A909C /* react_native_gtm.h */,
+				1EE5431B1D2B58AC003A909C /* react_native_gtm.m */,
+			);
+			path = "react-native-gtm";
+			sourceTree = "<group>";
+		};
+		1EE543D21D2B632F003A909C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				1EE5446D1D2B6902003A909C /* libAdIdAccess.a */,
+				1EE543D31D2B632F003A909C /* GAI.h */,
+				1EE543D41D2B632F003A909C /* GAIDictionaryBuilder.h */,
+				1EE543D51D2B632F003A909C /* GAIEcommerceFields.h */,
+				1EE543D61D2B632F003A909C /* GAIEcommerceProduct.h */,
+				1EE543D71D2B632F003A909C /* GAIEcommerceProductAction.h */,
+				1EE543D81D2B632F003A909C /* GAIEcommercePromotion.h */,
+				1EE543D91D2B632F003A909C /* GAIFields.h */,
+				1EE543DA1D2B632F003A909C /* GAILogger.h */,
+				1EE543DB1D2B632F003A909C /* GAITrackedViewController.h */,
+				1EE543DC1D2B632F003A909C /* GAITracker.h */,
+				1EE543DE1D2B632F003A909C /* libGoogleAnalyticsServices.a */,
+				1EE543DF1D2B632F003A909C /* TAGContainer.h */,
+				1EE543E01D2B632F003A909C /* TAGContainerOpener.h */,
+				1EE543E11D2B632F003A909C /* TAGDataLayer.h */,
+				1EE543E21D2B632F003A909C /* TAGLogger.h */,
+				1EE543E31D2B632F003A909C /* TAGManager.h */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EE543151D2B58AC003A909C /* react-native-gtm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EE5431F1D2B58AC003A909C /* Build configuration list for PBXNativeTarget "react-native-gtm" */;
+			buildPhases = (
+				1EE543121D2B58AC003A909C /* Sources */,
+				1EE543131D2B58AC003A909C /* Frameworks */,
+				1EE543141D2B58AC003A909C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "react-native-gtm";
+			productName = "react-native-gtm";
+			productReference = 1EE543161D2B58AC003A909C /* libreact-native-gtm.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EE5430E1D2B58AC003A909C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = irvingdp;
+				TargetAttributes = {
+					1EE543151D2B58AC003A909C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 1EE543111D2B58AC003A909C /* Build configuration list for PBXProject "react-native-gtm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1EE5430D1D2B58AC003A909C;
+			productRefGroup = 1EE543171D2B58AC003A909C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EE543151D2B58AC003A909C /* react-native-gtm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EE543121D2B58AC003A909C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE5431C1D2B58AC003A909C /* react_native_gtm.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1EE5431D1D2B58AC003A909C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1EE5431E1D2B58AC003A909C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1EE543201D2B58AC003A909C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/lib";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1EE543211D2B58AC003A909C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/lib";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1EE543111D2B58AC003A909C /* Build configuration list for PBXProject "react-native-gtm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EE5431D1D2B58AC003A909C /* Debug */,
+				1EE5431E1D2B58AC003A909C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EE5431F1D2B58AC003A909C /* Build configuration list for PBXNativeTarget "react-native-gtm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EE543201D2B58AC003A909C /* Debug */,
+				1EE543211D2B58AC003A909C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1EE5430E1D2B58AC003A909C /* Project object */;
+}

@@ -17,5 +17,9 @@
     "react-native",
     "ios",
     "android"
-  ]
+  ],
+  "devDependencies": {
+    "react": "15.2.0",
+    "react-native": "^0.28.0"
+  }
 }
