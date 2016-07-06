@@ -27,11 +27,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1EAD200E1D2CB2CD0046D516 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		1EAD20101D2CB2E30046D516 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		1EAD20121D2CB2FD0046D516 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		1EAD20141D2CB3090046D516 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		1EAD20161D2CB34F0046D516 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		1EE543161D2B58AC003A909C /* libreact-native-gtm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-gtm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE543191D2B58AC003A909C /* react_native_gtm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = react_native_gtm.h; sourceTree = "<group>"; };
 		1EE5431B1D2B58AC003A909C /* react_native_gtm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = react_native_gtm.m; sourceTree = "<group>"; };
@@ -70,11 +65,6 @@
 		1EE5430D1D2B58AC003A909C = {
 			isa = PBXGroup;
 			children = (
-				1EAD20161D2CB34F0046D516 /* AdSupport.framework */,
-				1EAD20141D2CB3090046D516 /* libsqlite3.tbd */,
-				1EAD20121D2CB2FD0046D516 /* libz.tbd */,
-				1EAD20101D2CB2E30046D516 /* SystemConfiguration.framework */,
-				1EAD200E1D2CB2CD0046D516 /* CoreData.framework */,
 				1EE543D21D2B632F003A909C /* lib */,
 				1EE543181D2B58AC003A909C /* react-native-gtm */,
 				1EE543171D2B58AC003A909C /* Products */,
