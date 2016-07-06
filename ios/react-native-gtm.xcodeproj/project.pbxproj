@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EAD200F1D2CB2CD0046D516 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAD200E1D2CB2CD0046D516 /* CoreData.framework */; };
-		1EAD20111D2CB2E30046D516 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAD20101D2CB2E30046D516 /* SystemConfiguration.framework */; };
-		1EAD20131D2CB2FD0046D516 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAD20121D2CB2FD0046D516 /* libz.tbd */; };
-		1EAD20151D2CB3090046D516 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAD20141D2CB3090046D516 /* libsqlite3.tbd */; };
-		1EAD20171D2CB34F0046D516 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAD20161D2CB34F0046D516 /* AdSupport.framework */; };
 		1EE5431A1D2B58AC003A909C /* react_native_gtm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1EE543191D2B58AC003A909C /* react_native_gtm.h */; };
 		1EE5431C1D2B58AC003A909C /* react_native_gtm.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5431B1D2B58AC003A909C /* react_native_gtm.m */; };
 		1EE543E51D2B632F003A909C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE543DE1D2B632F003A909C /* libGoogleAnalyticsServices.a */; };
@@ -64,11 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EAD20171D2CB34F0046D516 /* AdSupport.framework in Frameworks */,
-				1EAD20151D2CB3090046D516 /* libsqlite3.tbd in Frameworks */,
-				1EAD20131D2CB2FD0046D516 /* libz.tbd in Frameworks */,
-				1EAD20111D2CB2E30046D516 /* SystemConfiguration.framework in Frameworks */,
-				1EAD200F1D2CB2CD0046D516 /* CoreData.framework in Frameworks */,
 				1EE543E51D2B632F003A909C /* libGoogleAnalyticsServices.a in Frameworks */,
 				1EE5446E1D2B6902003A909C /* libAdIdAccess.a in Frameworks */,
 			);
