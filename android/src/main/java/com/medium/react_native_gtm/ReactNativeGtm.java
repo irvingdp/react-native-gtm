@@ -31,7 +31,7 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
 
     @ReactMethod
     public void openContainerWithId(final String containerId, final Promise promise){
-        if (mContainerHolder != null) {
+        if (mContainerHolder != null && mContainerHolder.getContainer().getContainerId() == containerId) {
             promise.reject("GTM-openContainerWithId():", new Throwable("The container is already open."));
             return;
         }

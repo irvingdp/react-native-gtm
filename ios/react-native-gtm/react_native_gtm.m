@@ -22,7 +22,8 @@ RCT_EXPORT_METHOD(openContainerWithId:(NSString *)containerId
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
-    if (mTAGContainer != nil) {
+    if (mTAGContainer != nil  && [mTAGContainer.containerId isEqualToString:containerId]) {
+        [mTAGContainer refresh];
         reject(@"GTM-openContainerWithId():", nil, RCTErrorWithMessage(@"The container is already open."));
         return;
     }
@@ -31,13 +32,8 @@ RCT_EXPORT_METHOD(openContainerWithId:(NSString *)containerId
         reject(@"GTM-openContainerWithId():", nil, RCTErrorWithMessage(@"The Container is opening."));
         return;
     }
-    
-    if (mTagManager == nil) {
-        mTagManager = [TAGManager instance];
-    }
-    
+    mTagManager = [TAGManager instance];
     self.isOpeningContainer = resolve;
-    
     [TAGContainerOpener openContainerWithId:containerId
                                  tagManager:mTagManager
                                    openType:kTAGOpenTypePreferFresh
