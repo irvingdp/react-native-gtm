@@ -2,15 +2,17 @@
 
 import { NativeModules } from 'react-native';
 
-var RCTGtm = NativeModules.ReactNativeGtm;
+const RCTGtm = NativeModules.ReactNativeGtm;
 
-var ReactNativeGtm = {
+const ReactNativeGtm = {
      /**
      * Creating a ContainerHolder Singleton
      * @param {String} containerId
      */
     openContainerWithId : function(containerId) {
-        return RCTGtm.openContainerWithId(containerId);
+        return (RCTGtm) ? RCTGtm.openContainerWithId(containerId) : new Promise((resolve,reject) => {
+            reject(new Error('RCTGtm not found'));
+        });
     },
     /**
      * Merges the given <code>json</code> object into the existing data model,
