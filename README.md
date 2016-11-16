@@ -44,7 +44,7 @@ Import the libaries and call `openContainerWithId` to create singleton instance.
     
  
 ###push({json})
-Import the libaries and call `openContainerWithId` to create singleton instance.  ***Note: {json} not support array type.***
+Import the libaries and call `openContainerWithId` to create singleton instance.  ***Note: {json} now(>0.1.5) support array type included on Andriod , but not full test.***
 
 1. If first key **is** `event` , the `push` will fire a event with others keyPairs to `datalayer`. 
 

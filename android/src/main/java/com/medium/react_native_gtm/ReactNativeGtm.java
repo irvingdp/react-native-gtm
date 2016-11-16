@@ -5,6 +5,8 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.ReadableType;
+import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
@@ -12,6 +14,8 @@ import com.google.android.gms.tagmanager.ContainerHolder;
 import com.google.android.gms.tagmanager.TagManager;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class ReactNativeGtm extends ReactContextBaseJavaModule{
@@ -90,10 +94,43 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
                     map.put(key, ConvertReadableMapToHashMap(readableMap.getMap(key)));
                     break;
                 case Array:
-                    //not support array
+                    map.put(key, ConvertReadableArrayToHashMap(readableMap.getArray(key)));
                     break;
+                default:
+                    throw new IllegalArgumentException("Could not convert object with key: " + key + ".");
             }
         }
         return map;
     }
+
+    private static List<Object> ConvertReadableArrayToHashMap(ReadableArray readableArray) {
+        List<Object> deconstructedList = new ArrayList<>(readableArray.size());
+        for (int i = 0; i < readableArray.size(); i++) {
+            ReadableType indexType = readableArray.getType(i);
+            switch(indexType) {
+                case Null:
+                    deconstructedList.add(i, null);
+                    break;
+                case Boolean:
+                    deconstructedList.add(i, readableArray.getBoolean(i));
+                    break;
+                case Number:
+                    deconstructedList.add(i, readableArray.getDouble(i));
+                    break;
+                case String:
+                    deconstructedList.add(i, readableArray.getString(i));
+                    break;
+                case Map:
+                    deconstructedList.add(i, ConvertReadableMapToHashMap(readableArray.getMap(i)));
+                    break;
+                case Array:
+                    deconstructedList.add(i, ConvertReadableArrayToHashMap(readableArray.getArray(i)));
+                    break;
+                default:
+                    throw new IllegalArgumentException("Could not convert object at index " + i + ".");
+            }
+        }
+        return deconstructedList;
+    }
+
 }
