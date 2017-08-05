@@ -19,6 +19,7 @@ static TAGContainer *mTAGContainer;
 static TAGManager *mTagManager;
 
 RCT_EXPORT_METHOD(openContainerWithId:(NSString *)containerId
+				  debug:(BOOL)debug
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
@@ -33,6 +34,8 @@ RCT_EXPORT_METHOD(openContainerWithId:(NSString *)containerId
         return;
     }
     mTagManager = [TAGManager instance];
+	mTagManager.logger.logLevel = debug ? kTAGLoggerLogLevelVerbose : kTAGLoggerLogLevelError;
+
     self.isOpeningContainer = resolve;
     [TAGContainerOpener openContainerWithId:containerId
                                  tagManager:mTagManager

@@ -1,5 +1,7 @@
 package com.medium.react_native_gtm;
 
+import android.util.Log;
+
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -34,7 +36,7 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
     }
 
     @ReactMethod
-    public void openContainerWithId(final String containerId, final Promise promise){
+    public void openContainerWithId(final String containerId, final String defaultContainerName, final boolean debug, final Promise promise){
         if (mContainerHolder != null && mContainerHolder.getContainer().getContainerId() == containerId) {
             promise.reject("GTM-openContainerWithId():", new Throwable("The container is already open."));
             return;
@@ -46,8 +48,20 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
         }
 
         mTagManager = TagManager.getInstance(getReactApplicationContext());
+		mTagManager.setVerboseLoggingEnabled(debug);
+
+		int resId = -1;
+		if (defaultContainerName != null && !defaultContainerName.isEmpty()) {
+			String packageName = getReactApplicationContext().getPackageName();
+			resId = getReactApplicationContext().getResources().getIdentifier(defaultContainerName, "raw", packageName);
+			if (resId == 0) {
+				promise.reject("GTM-openContainerWithId():", new Throwable("The container with name " + defaultContainerName + " provided by defaultContainerName, is not found. Please check res/raw"));
+				return;
+			}
+		}
+
         isOpeningContainer = true;
-        PendingResult<ContainerHolder> pending = mTagManager.loadContainerPreferFresh(containerId, -1);
+        PendingResult<ContainerHolder> pending = mTagManager.loadContainerPreferFresh(containerId, resId);
         pending.setResultCallback(new ResultCallback<ContainerHolder>() {
             @Override
             public void onResult(ContainerHolder containerHolder) {
