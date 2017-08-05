@@ -33,16 +33,16 @@ React Native wrapper package for using native Google tag manager libraries on iO
 ### openContainerWithId(containerId)
 Import the libaries and call `openContainerWithId` to create singleton instance.
 
-    ```
-    import GoogleTagManager from 'react-native-gtm';
-     
-     (function initializeGA() {
- 	    GoogleTagManager.openContainerWithId("GTM-XXXX")
- 	        .then(function(){
-	            //open container success
-	        })
-    }());
-    ```
+```
+import GoogleTagManager from 'react-native-gtm';
+
+ (function initializeGA() {
+    GoogleTagManager.openContainerWithId("GTM-XXXX")
+        .then(function(){
+            //open container success
+        })
+}());
+``` 
 
 ### push({json})
 Import the libaries and call `openContainerWithId` to create singleton instance.  ***Note: 
