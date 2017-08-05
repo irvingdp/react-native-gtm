@@ -1,6 +1,7 @@
 "use strict";
 
 import { NativeModules } from 'react-native';
+import Platform from './index.platform'
 
 const RCTGtm = NativeModules.ReactNativeGtm;
 
@@ -8,9 +9,11 @@ const ReactNativeGtm = {
      /**
      * Creating a ContainerHolder Singleton
      * @param {String} containerId
+     * @param {Bool} debug
+     * @param {String} default container name (android)
      */
-    openContainerWithId : function(containerId) {
-        return (RCTGtm) ? RCTGtm.openContainerWithId(containerId) : new Promise((resolve,reject) => {
+    openContainerWithId : function(containerId, debug = false, defaultContainerName = '') {
+        return (RCTGtm) ? Platform.openContainerWithId(RCTGtm, containerId, debug, defaultContainerName) : new Promise((resolve,reject) => {
             reject(new Error('RCTGtm not found'));
         });
     },
