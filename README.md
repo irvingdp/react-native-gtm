@@ -41,7 +41,7 @@ Import the libaries and call `openContainerWithId` to create singleton instance.
 	            //open container success
 	        })
     }());
-    ```
+    
  
 ### push({json})
 Import the libaries and call `openContainerWithId` to create singleton instance.  ***Note: 
