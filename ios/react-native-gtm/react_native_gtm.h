@@ -6,7 +6,4 @@
 #import "RCTUtils.h"
 
 @interface react_native_gtm : NSObject <RCTBridgeModule>
-
-@property (nonatomic, copy) RCTPromiseResolveBlock isOpeningContainer;
-
 @end
