@@ -68,73 +68,16 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
 
     @ReactMethod
     public void push(ReadableMap values, final Promise promise){
-        if (mTagManager != null && mTagManager.getDataLayer() != null) {
-            mTagManager.getDataLayer().push(ConvertReadableMapToHashMap(values));
-            promise.resolve("success");
+        if (this.mTagManager != null && this.mTagManager.getDataLayer() != null) {
+			if (values instanceof ReadableNativeMap) {
+				ReadableNativeMap nativeMap = (ReadableNativeMap) values;
+            	this.mTagManager.getDataLayer().push(nativeMap.toHashMap());
+            	promise.resolve("success");
+			} else {
+            	promise.reject("GTM-push():", new Throwable("You can only push objects."));
+			}
         }else{
             promise.reject("GTM-push():", new Throwable("The container has not be opened."));
         }
     }
-
-    private static HashMap ConvertReadableMapToHashMap(ReadableMap readableMap) {
-        HashMap map = new HashMap();
-        ReadableMapKeySetIterator iterator = readableMap.keySetIterator();
-        while (iterator.hasNextKey()) {
-            String key = iterator.nextKey();
-            switch (readableMap.getType(key)) {
-                case Null:
-                    map.put(key, null);
-                    break;
-                case Boolean:
-                    map.put(key, readableMap.getBoolean(key));
-                    break;
-                case Number:
-                    map.put(key, readableMap.getDouble(key));
-                    break;
-                case String:
-                    map.put(key, readableMap.getString(key));
-                    break;
-                case Map:
-                    map.put(key, ConvertReadableMapToHashMap(readableMap.getMap(key)));
-                    break;
-                case Array:
-                    map.put(key, ConvertReadableArrayToHashMap(readableMap.getArray(key)));
-                    break;
-                default:
-                    throw new IllegalArgumentException("Could not convert object with key: " + key + ".");
-            }
-        }
-        return map;
-    }
-
-    private static List<Object> ConvertReadableArrayToHashMap(ReadableArray readableArray) {
-        List<Object> deconstructedList = new ArrayList<>(readableArray.size());
-        for (int i = 0; i < readableArray.size(); i++) {
-            ReadableType indexType = readableArray.getType(i);
-            switch(indexType) {
-                case Null:
-                    deconstructedList.add(i, null);
-                    break;
-                case Boolean:
-                    deconstructedList.add(i, readableArray.getBoolean(i));
-                    break;
-                case Number:
-                    deconstructedList.add(i, readableArray.getDouble(i));
-                    break;
-                case String:
-                    deconstructedList.add(i, readableArray.getString(i));
-                    break;
-                case Map:
-                    deconstructedList.add(i, ConvertReadableMapToHashMap(readableArray.getMap(i)));
-                    break;
-                case Array:
-                    deconstructedList.add(i, ConvertReadableArrayToHashMap(readableArray.getArray(i)));
-                    break;
-                default:
-                    throw new IllegalArgumentException("Could not convert object at index " + i + ".");
-            }
-        }
-        return deconstructedList;
-    }
-
 }

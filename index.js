@@ -28,7 +28,11 @@ const ReactNativeGtm = {
      * @param {String}object The object to process
      */
     push : function(object) {
+        if (typeof object === 'object' && !Array.isArray(object)) {
             return RCTGtm.push(object);
+        } else {
+            return Promise.reject("You must push an object, not an array or a primitive.");
+      }
     }
 
 }
