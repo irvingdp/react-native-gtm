@@ -36,8 +36,8 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
     }
 
     @ReactMethod
-    public void openContainerWithId(final String containerId, final String defaultContainerName, final boolean debug, final Promise promise){
-        if (mContainerHolder != null && mContainerHolder.getContainer().getContainerId() == containerId) {
+    public void openContainerWithId(final String containerId, final boolean debug, final Promise promise){
+        if (this.mContainerHolder != null && this.mContainerHolder.getContainer().getContainerId().equals(containerId)) {
             promise.reject("GTM-openContainerWithId():", new Throwable("The container is already open."));
             return;
         }
@@ -50,18 +50,8 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
         mTagManager = TagManager.getInstance(getReactApplicationContext());
 		mTagManager.setVerboseLoggingEnabled(debug);
 
-		int resId = -1;
-		if (defaultContainerName != null && !defaultContainerName.isEmpty()) {
-			String packageName = getReactApplicationContext().getPackageName();
-			resId = getReactApplicationContext().getResources().getIdentifier(defaultContainerName, "raw", packageName);
-			if (resId == 0) {
-				promise.reject("GTM-openContainerWithId():", new Throwable("The container with name " + defaultContainerName + " provided by defaultContainerName, is not found. Please check res/raw"));
-				return;
-			}
-		}
-
         isOpeningContainer = true;
-        PendingResult<ContainerHolder> pending = mTagManager.loadContainerPreferFresh(containerId, resId);
+        PendingResult<ContainerHolder> pending = mTagManager.loadContainerPreferFresh(containerId, -1);
         pending.setResultCallback(new ResultCallback<ContainerHolder>() {
             @Override
             public void onResult(ContainerHolder containerHolder) {
