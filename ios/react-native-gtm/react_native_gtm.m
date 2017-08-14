@@ -9,15 +9,13 @@
 @end
 
 @implementation react_native_gtm {
-    
+	TAGContainer *mTAGContainer;
+	TAGManager *mTagManager;
 }
 
 RCT_EXPORT_MODULE(ReactNativeGtm);
 
 @synthesize methodQueue = _methodQueue;
-
-static TAGContainer *mTAGContainer;
-static TAGManager *mTagManager;
 
 RCT_EXPORT_METHOD(openContainerWithId:(NSString *)containerId
 				  debug:(BOOL)debug

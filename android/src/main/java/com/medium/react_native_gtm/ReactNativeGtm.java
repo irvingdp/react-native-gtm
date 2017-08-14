@@ -1,32 +1,27 @@
 package com.medium.react_native_gtm;
 
-import android.util.Log;
+import android.support.annotation.NonNull;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
-import com.facebook.react.bridge.ReadableType;
-import com.facebook.react.bridge.ReadableArray;
-import com.facebook.react.bridge.ReadableMapKeySetIterator;
+import com.facebook.react.bridge.ReadableNativeMap;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.tagmanager.ContainerHolder;
 import com.google.android.gms.tagmanager.TagManager;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class ReactNativeGtm extends ReactContextBaseJavaModule{
+class ReactNativeGtm extends ReactContextBaseJavaModule{
 
-    private static TagManager mTagManager;
-    private static ContainerHolder mContainerHolder;
+    private TagManager mTagManager;
+    private ContainerHolder mContainerHolder;
     private Boolean isOpeningContainer = false;
 
-    public ReactNativeGtm(ReactApplicationContext reactContext) {
+    ReactNativeGtm(ReactApplicationContext reactContext) {
         super(reactContext);
     }
 
@@ -37,7 +32,7 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
 
     @ReactMethod
     public void openContainerWithId(final String containerId, final boolean debug, final Promise promise){
-        if (this.mContainerHolder != null && this.mContainerHolder.getContainer().getContainerId().equals(containerId)) {
+        if (mContainerHolder != null && mContainerHolder.getContainer().getContainerId().equals(containerId)) {
             promise.reject("GTM-openContainerWithId():", new Throwable("The container is already open."));
             return;
         }
@@ -54,12 +49,12 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
         PendingResult<ContainerHolder> pending = mTagManager.loadContainerPreferFresh(containerId, -1);
         pending.setResultCallback(new ResultCallback<ContainerHolder>() {
             @Override
-            public void onResult(ContainerHolder containerHolder) {
-                if (containerHolder != null && containerHolder.getStatus().isSuccess()) {
+            public void onResult(@NonNull ContainerHolder containerHolder) {
+                if (containerHolder.getStatus().isSuccess()) {
                     mContainerHolder = containerHolder;
                     promise.resolve(true);
                 } else {
-                    promise.reject("GTM-openContainerWithId():", new Throwable(String.format("Failed to open container id:", containerId)));
+                    promise.reject("GTM-openContainerWithId():", new Throwable(String.format("Failed to open container id: %s", containerId)));
                 }
                 isOpeningContainer = false;
             }
@@ -68,10 +63,10 @@ public class ReactNativeGtm extends ReactContextBaseJavaModule{
 
     @ReactMethod
     public void push(ReadableMap values, final Promise promise){
-        if (this.mTagManager != null && this.mTagManager.getDataLayer() != null) {
+        if (mTagManager != null && mTagManager.getDataLayer() != null) {
 			if (values instanceof ReadableNativeMap) {
 				ReadableNativeMap nativeMap = (ReadableNativeMap) values;
-            	this.mTagManager.getDataLayer().push(nativeMap.toHashMap());
+            	mTagManager.getDataLayer().push(nativeMap.toHashMap());
             	promise.resolve("success");
 			} else {
             	promise.reject("GTM-push():", new Throwable("You can only push objects."));
