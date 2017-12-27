@@ -30,21 +30,23 @@ React Native wrapper package for using native Google tag manager libraries on iO
 
 ## How to use
 
-###openContainerWithId(containerId)
+### openContainerWithId(containerId)
 Import the libaries and call `openContainerWithId` to create singleton instance.
-    ```
-    import GoogleTagManager from 'react-native-gtm';
-    
-    (function initializeGA() {
-	    GoogleTagManager.openContainerWithId("GTM-XXXX")
-	        .then(function(){
-	            //open container success
-	        })
-    }());
-    
- 
-###push({json})
-Import the libaries and call `openContainerWithId` to create singleton instance.  ***Note: {json} now(>0.1.5) support array type included on Andriod , but not full test.***
+
+```
+import GoogleTagManager from 'react-native-gtm';
+
+ (function initializeGA() {
+    GoogleTagManager.openContainerWithId("GTM-XXXX")
+        .then(function(){
+            //open container success
+        })
+}());
+``` 
+
+### push({json})
+Import the libaries and call `openContainerWithId` to create singleton instance.  ***Note: 
+{json} now(>0.1.5) support array type included on Andriod , but not full test.***
 
 1. If first key **is** `event` , the `push` will fire a event with others keyPairs to `datalayer`. 
 

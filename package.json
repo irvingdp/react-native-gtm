@@ -1,11 +1,17 @@
 {
   "name": "react-native-gtm",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "React Native bridge for using native Google tag manager libraries on iOS and Android",
   "main": "./index.js",
   "author": {
     "name": "Irvingdp"
   },
+  "contributors": [
+    {
+      "name": "Erik Poort",
+      "url": "https://github.com/MediaMonksMobile/"
+    }
+  ],
   "license": "MIT",
   "keywords": [
     "react",
